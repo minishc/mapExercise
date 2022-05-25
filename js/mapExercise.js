@@ -12,13 +12,13 @@ function mergeIntoObjectOfArrays(input) {
         for (const key in input[map]) {
             let add = true;
             if(!(key in result)) {
-                result[key] = {};
+                result[key] = [];
                 result[key][0] = input[map][key];
             }
 
             else {
-                let index = Object.values(result[key]).length;
-                if(Object.values(result[key]).includes(input[map][key])) {
+                let index = result[key].length;
+                if(result[key].includes(input[map][key])) {
                     add = false;
                 }
 
