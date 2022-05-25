@@ -1,7 +1,7 @@
 /*
     Input should be a list of maps which have String values
     will output a map with the value being an object
-    which is a list of Strings mapped to the key from the array
+    which is an array of Strings mapped to the key from the array
     of maps with no duplicates
 */
 function mergeIntoObjectOfArrays(input) {
@@ -17,13 +17,12 @@ function mergeIntoObjectOfArrays(input) {
             }
 
             else {
-                let index = result[key].length;
                 if(result[key].includes(input[map][key])) {
                     add = false;
                 }
 
                 if(add) {
-                    result[key][index] = input[map][key];
+                    result[key].push(input[map][key]);
                 }
             }
         }
